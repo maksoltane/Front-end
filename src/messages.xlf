@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="eb94e7170e51259363f334071dbe60d74dd4ae17" datatype="html">
+        <source> Inscription </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/authentication/authentication.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="68a92fe75081c7babe56a7aca316951c3613d3d1" datatype="html">
+        <source>Le nom est obligatoir</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/authentication/authentication.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b8726d875683bf433bc8d79b602bdb96509a75f" datatype="html">
+        <source>Enregistrer </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/authentication/authentication.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

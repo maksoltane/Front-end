@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+ .nb-theme-default [nbButton].btn-primary:focus {
+outline-color: unset;
+}
+.invalide-champ{
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
