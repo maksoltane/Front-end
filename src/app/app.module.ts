@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RacesComponent } from './components/races/races.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AwsCognitoService } from './services/aws-cognito.service';
-import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { AuthenticationComponent } from './components/registration/authentication.component';
 import { NbThemeModule } from '@nebular/theme';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,7 @@ import {
   NbInputModule,
   NbButtonModule,
 } from '@nebular/theme';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes = [
   // {path: 'UI/part1/Details', component: DetailsComponent}
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     AppComponent,
     RacesComponent,
     AuthenticationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

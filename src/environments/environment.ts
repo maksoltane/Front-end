@@ -10,7 +10,8 @@ export const environment = {
   cognitoPoolId: 'eu-west-1_6c81V1B2V',
   accessKey: 'REPLACETHIS',
   secretAccessKey: 'REPLACETHIS',
-  awsRegion: 'eu-west-1'
+  awsRegion: 'eu-west-1',
+  identityPoolId: 'arn:aws:iam::135265295937:role/Cognito_lorawan_FrontEndAuth_Role'
 };
 
 

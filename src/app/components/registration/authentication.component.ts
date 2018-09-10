@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from "../../models/user.models"
+import { User } from '../../models/user.models';
 import { AwsCognitoService } from '../../services/aws-cognito.service';
 
-class userAtho extends User {
+class UserAtho extends User {
   confirmation: string;
   termsConditions: boolean;
 }
@@ -13,12 +13,12 @@ class userAtho extends User {
   styleUrls: ['./authentication.component.css']
 })
 export class AuthenticationComponent {
-  userData: userAtho = {} as userAtho;
+  userData: UserAtho = {} as UserAtho;
   errorMessage: string;
   successMessage: string;
   userConfirmed: boolean;
-  enAttenteDeConfirmation: boolean = false;
-  showAuthentificationPage: boolean = true;
+  confirmationInscription = false;
+  validationInscription = false;
   constructor(private awsCognitoService: AwsCognitoService, ) {
 
   }
@@ -33,8 +33,8 @@ export class AuthenticationComponent {
       }
       if (data) {
         this.successMessage = data;
-        this.showAuthentificationPage = false;
-        this.enAttenteDeConfirmation = true;
+        this.validationInscription = true;
+        this.confirmationInscription = false;
         console.log('Success Message de amazon:: ', data);
       }
     });
@@ -51,7 +51,8 @@ export class AuthenticationComponent {
       }
       if (data) {
         this.successMessage = data;
-        this.showAuthentificationPage = false;
+        this.validationInscription = false;
+        this.confirmationInscription = true;
         console.log('Success Message de amazon:: ', data);
       }
     });

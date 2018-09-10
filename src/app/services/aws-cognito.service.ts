@@ -23,7 +23,7 @@ export class AwsCognitoService {
   }
 
   /**
-   *
+   * methode qui permet de s'inscrire'à aws cognito
    *
    * @param {User} userData
    * @param {*} callback
@@ -48,7 +48,7 @@ export class AwsCognitoService {
     });
   }
   /**
-   *
+   * methode qui permet de confirmer l'inscription à AWS cognito avec un code
    *
    * @param {User} userData
    * @param {*} callback
@@ -65,6 +65,14 @@ export class AwsCognitoService {
       callback(err, data);
     });
   }
+  /**
+   * methode qui permet de se logger à aws cognito
+   *
+   * @param {User} userData
+   * @param {*} callback
+   *
+   * @memberOf AwsCognitoService
+   */
   public signIn(userData: User, callback: any): void {
     const params = {
       AuthFlow: 'USER_PASSWORD_AUTH', /* required */
