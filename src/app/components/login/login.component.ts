@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { User } from '../../models/user.models';
 import { AwsCognitoService } from '../../services/aws-cognito.service';
 
@@ -15,16 +15,7 @@ export class LoginComponent  {
   onSubmitLogin() {
     this.errorMessage = null;
     this.successMessage = null;
-    this.awsCognitoService.signIn(this.userData, (err, data) => {
-      if (err) {
-        this.errorMessage =  err;
-        console.log('Error Message de amazon: ', err);
-      }
-      if (data) {
-        this.successMessage = data;
-        console.log('Success Message de amazon:: ', data);
-      }
-    });
+    this.awsCognitoService.signIn(this.userData, this);
   }
 
 }

@@ -10,6 +10,10 @@ import { NbThemeModule } from '@nebular/theme';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CognitoUtil } from './services/cognito.service';
+import { UserLoginService } from './services/user-login.service';
+
+
 
 import {
   NbSidebarService,
@@ -75,7 +79,7 @@ const appRoutes: Routes = [
     NbInputModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [AwsCognitoService, NbSidebarService],
+  providers: [AwsCognitoService, NbSidebarService, CognitoUtil, UserLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -23,7 +23,7 @@ export class AuthenticationComponent {
 
   }
   onSubmitInscription() {
-    console.log("test")
+    console.log('test');
     this.errorMessage = null;
     this.successMessage = null;
     this.awsCognitoService.signUp(this.userData, (err, data) => {
@@ -41,7 +41,7 @@ export class AuthenticationComponent {
   }
 
   onSubmitConfirmation() {
-    console.log("test")
+    console.log('test');
     this.errorMessage = null;
     this.successMessage = null;
     this.awsCognitoService.confirmSignup(this.userData, (err, data) => {
