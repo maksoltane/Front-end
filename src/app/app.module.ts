@@ -37,6 +37,7 @@ import {
 } from '@nebular/theme';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './components/dashbord/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   // {path: 'UI/part1/Details', component: DetailsComponent}
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     InscriptionComponent,
     LoginComponent,
     ForgotpasswordComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

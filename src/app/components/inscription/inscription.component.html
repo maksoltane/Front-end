@@ -1,6 +1,9 @@
 <!-- start inscription -->
 <div class="container col-md-6" *ngIf="!validationInscription && !confirmationInscription">
-  <h2 class="tiltle"> Inscription </h2>
+  <div>
+      <h2 class="tiltle"> Inscription </h2>
+  </div>
+  <br>
   <form name="form" (ngSubmit)="f.form.valid && onSubmitInscription()" #f="ngForm" novalidate>
     <div class="form-group">
       <input type="text" class="form-control" nbInput name="name" placeholder="Nom" [(ngModel)]="userData.name" #name="ngModel"
