@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { User } from '../../models/user.models';
-import { AwsCognitoService } from '../../services/aws-cognito.service';
+//import { AwsCognitoService } from '../../services/aws-cognito.service';
 
 @Component({
   selector: 'ns-login',
@@ -11,11 +11,11 @@ export class LoginComponent  {
   userData =  {} as User;
   errorMessage: string = null;
   successMessage: string = null;
-  constructor(private awsCognitoService: AwsCognitoService)  { }
+  constructor()  { }
   onSubmitLogin() {
     this.errorMessage = null;
     this.successMessage = null;
-    this.awsCognitoService.signIn(this.userData, this);
+    //this.awsCognitoService.signIn(this.userData, this);
   }
 
 }
