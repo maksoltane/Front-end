@@ -1,0 +1,83 @@
+<!-- start login  -->
+<div class="container col-md-6" *ngIf="!validationConnexion">
+  <div>
+      <h2 class="tiltle"> Connexion</h2>
+  </div>
+  <br>
+  <form name="form" (ngSubmit)="f.form.valid && onSubmitLogin()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <input type="text" class="form-control" nbInput name="email" placeholder="Email" [(ngModel)]="userData.email"
+        #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required />
+      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+        <span *ngIf="email.errors.required">L'adresse email est obligatoire</span>
+      </div>
+      <div *ngIf="f.submitted && email.invalid && (userData.email != null && userData.email != '')" class="invalid-feedback">
+        <span>Merci de rentrer une adresse email valide</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" nbInput name="password" placeholder="mot de passe" [(ngModel)]="userData.password"
+        #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
+      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <span *ngIf="password.errors.required">Le mot de passe est obligatoire</span>
+      </div>
+      <br>
+      <div>
+        <span>
+          <nb-alert *ngIf="errorMessage != null" status="danger"> {{errorMessage}} </nb-alert>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button nbButton status="success" fullWidth>Connexion</button>
+    </div>
+    <div>
+      <a href="/forgot_password"> <strong> Mot de passe oublié ? </strong> </a>
+    </div>
+    <div>
+      <span>  Vous n'avez pas de compte ?</span>
+      <strong><a href="/signup">Inscription</a></strong>
+    </div>
+    <div>
+    </div>
+  </form>
+</div>
+<!-- End login -->
+
+<!-- start forgot Password  -->
+<div class="container col-md-6" *ngIf="forgotPassword">
+  <h2 class="tiltle"> Récupération de votre mot de passe </h2>
+  <form name="form" (ngSubmit)="f.form.valid && onSubmitLogin()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <input type="text" class="form-control" nbInput name="email" placeholder="Email" [(ngModel)]="userData.email"
+        #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required />
+      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+        <span *ngIf="email.errors.required">L'adresse email est obligatoire</span>
+      </div>
+      <div *ngIf="f.submitted && email.invalid && (userData.email != null && userData.email != '')" class="invalid-feedback">
+        <span>Merci de rentrer une adresse email valide</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" nbInput name="password" placeholder="mot de passe" [(ngModel)]="userData.password"
+        #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
+      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <span *ngIf="password.errors.required">Le mot de passe est obligatoire</span>
+      </div>
+      <br>
+      <div>
+        <span>
+          <nb-alert *ngIf="errorMessage != null" status="danger"> {{errorMessage}} </nb-alert>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button nbButton status="success" fullWidth>Connexion</button>
+    </div>
+    <div>
+    </div>
+  </form>
+</div>
+<!-- End forgot Password -->

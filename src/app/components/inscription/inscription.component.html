@@ -43,15 +43,14 @@
       <div *ngIf="f.submitted && termsConditions.invalid"> <span class="invalide-champ"> Merci d'accepter les conditions
           générales</span>
       </div>
-
+      <div>
+        <span>
+          <nb-alert *ngIf="errorMessage != null" status="danger"> {{errorMessage}} </nb-alert>
+        </span>
+      </div>
     </div>
     <div class="form-group">
-      <button nbButton status="success" fullWidth>Inscription</button>
-    </div>
-    <div>
-      <span>
-        <nb-alert *ngIf="errorMessage != null" status="danger"> {{errorMessage}} </nb-alert>
-      </span>
+      <button nbButton status="success" >Inscription</button>
     </div>
     <div>
     </div>
@@ -62,7 +61,7 @@
 <!-- start confirmation inscription -->
 <div class="container col-md-6" *ngIf="validationInscription && !confirmationInscription">
   <h2 class="tiltle"> Validation de votre inscription </h2>
-  <form name="form" (ngSubmit)="f.form.valid && onSubmitConfirmation()" #f="ngForm" novalidate>
+  <form name="form" (ngSubmit)="f.form.valid && onSubmitValidation()" #f="ngForm" novalidate>
     <div class="form-group">
       <input type="text" class="form-control" nbInput name="email" placeholder="Email" [(ngModel)]="userData.email" #email="ngModel"
          [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required />

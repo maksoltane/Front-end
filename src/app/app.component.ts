@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {AwsCognitoService} from './services/aws-cognito.service';
 import { User } from './models/user.models';
 import { ToastrService } from 'ngx-toastr';
 

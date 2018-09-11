@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 import { RacesComponent } from './components/races/races.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AwsCognitoService } from './services/aws-cognito.service';
-import { AuthenticationComponent } from './components/registration/authentication.component';
+import { InscriptionComponent } from './components/inscription/inscription.component';
 import { NbThemeModule } from '@nebular/theme';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/connexion/connexion.component';
+
 import { ToastrModule } from 'ngx-toastr';
-import { CognitoUtil } from './services/cognito.service';
-import { UserLoginService } from './services/user-login.service';
 
 
 
@@ -35,7 +35,8 @@ import {
   NbInputModule,
   NbButtonModule,
 } from '@nebular/theme';
-import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './routing/app-routing.module';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 const appRoutes: Routes = [
   // {path: 'UI/part1/Details', component: DetailsComponent}
@@ -46,8 +47,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     RacesComponent,
-    AuthenticationComponent,
+    InscriptionComponent,
     LoginComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,9 +79,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NbSpinnerModule,
     NbInputModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(), AppRoutingModule, // ToastrModule added
   ],
-  providers: [AwsCognitoService, NbSidebarService, CognitoUtil, UserLoginService],
+  providers: [AwsCognitoService, NbSidebarService,],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -28,9 +28,10 @@
   </nb-sidebar>
 
   <nb-layout-column>
-    <button (click)="showSuccess()"> test </button>
-      <ns-authentication ></ns-authentication>
-      <ns-login *ngIf="false"></ns-login>
+    <!-- <button (click)="showSuccess()"> test </button>
+      <ns-inscription *ngIf="false"></ns-inscription>
+      <ns-connexion></ns-connexion> -->
+      <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
 
