@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
-import { User } from './models/user.models';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
+import {AwsCognitoService} from './services/aws-cognito.service';
+
+
+
 
 @Component({
   selector: 'ns-root',
@@ -9,14 +15,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent {
   //
-
-  //
-constructor( private toastr: ToastrService) {
-
-
+  liveApi: any;
+constructor(
+  private toastr: ToastrService,
+  private http: HttpClient,
+  private awsCognitoService: AwsCognitoService) {
+//
 }
 
-showSuccess() {
-  this.toastr.success('Hello world!', 'Toastr fun!');
+// showSuccess() {
+//   this.toastr.success('Hello world!', 'Toastr fun!');
+//   this.http.get('http://apilayer.net/api/live?access_key=c1cac5752dad6ece0a1944c9d9f06a74&currencies=EUR&source=USD&format=1').pipe(
+//   )
+// }
+
+public testUser() {
+  this.awsCognitoService.getUserConnected();
 }
 }

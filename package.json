@@ -22,6 +22,7 @@
     "@angular/router": "^6.1.0",
     "@nebular/theme": "^2.0.0-rc.10",
     "amazon-cognito-identity-js": "^2.0.23",
+    "angular-in-memory-web-api": "^0.6.1",
     "aws-amplify": "^1.0.10",
     "aws-amplify-angular": "^2.0.2",
     "aws-sdk": "^2.310.0",

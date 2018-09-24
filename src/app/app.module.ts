@@ -10,7 +10,7 @@ import { NbThemeModule } from '@nebular/theme';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/connexion/connexion.component';
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ToastrModule } from 'ngx-toastr';
 
 
@@ -37,7 +37,7 @@ import {
 } from '@nebular/theme';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
-import { DashboardComponent } from './components/dashbord/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashbord/dashboard.component';
 
 const appRoutes: Routes = [
   // {path: 'UI/part1/Details', component: DetailsComponent}
@@ -83,7 +83,7 @@ const appRoutes: Routes = [
     NbInputModule, // required animations module
     ToastrModule.forRoot(), AppRoutingModule, // ToastrModule added
   ],
-  providers: [AwsCognitoService, NbSidebarService,],
+  providers: [AwsCognitoService, NbSidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

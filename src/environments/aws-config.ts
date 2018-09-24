@@ -5,11 +5,10 @@ Amplify.configure({
 
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
         identityPoolId: 'eu-west-1:65fd3053-c503-4473-9dd3-7054ac578f4d',
-        
         // REQUIRED - Amazon Cognito Region
         region: 'eu-west-1',
 
-        // OPTIONAL - Amazon Cognito Federated Identity Pool Region 
+        // OPTIONAL - Amazon Cognito Federated Identity Pool Region
         // Required only if it's different from Amazon Cognito Region
         identityPoolRegion: 'eu-west-1',
 
@@ -23,21 +22,9 @@ Amplify.configure({
         mandatorySignIn: false,
 
         // OPTIONAL - Configuration for cookie storage
-        cookieStorage: {
-        // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-            domain: '.yourdomain.com',
-        // OPTIONAL - Cookie path
-            path: '/',
-        // OPTIONAL - Cookie expiration in days
-            expires: 365,
-        // OPTIONAL - Cookie secure flag
-            secure: true
-        },
-
         // OPTIONAL - customized storage object
        // storage: new Storage(),
-        
         // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
         authenticationFlowType: 'USER_PASSWORD_AUTH'
-    }
+    },
 });
