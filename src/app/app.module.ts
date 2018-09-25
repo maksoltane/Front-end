@@ -10,9 +10,13 @@ import { NbThemeModule } from '@nebular/theme';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/connexion/connexion.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ToastrModule } from 'ngx-toastr';
-
+import { AppRoutingModule } from './routing/app-routing.module';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './components/dashbord/dashboard.component';
+import { SignoutComponent } from './components/signout/signout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 import {
@@ -35,9 +39,7 @@ import {
   NbInputModule,
   NbButtonModule,
 } from '@nebular/theme';
-import { AppRoutingModule } from './routing/app-routing.module';
-import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
-import { DashboardComponent } from './components/dashbord/dashboard.component';
+
 
 const appRoutes: Routes = [
   // {path: 'UI/part1/Details', component: DetailsComponent}
@@ -52,6 +54,9 @@ const appRoutes: Routes = [
     LoginComponent,
     ForgotpasswordComponent,
     DashboardComponent,
+    SignoutComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,28 +65,26 @@ const appRoutes: Routes = [
     NbThemeModule.forRoot({ name: 'default' }),
     RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
     NbLayoutModule,
-    NbSidebarModule,
     NbAlertModule,
     NbCardModule,
-    NbCardModule,
-    NbLayoutModule,
     NbTabsetModule,
     NbRouteTabsetModule,
-    NbMenuModule,
     NbUserModule,
     NbActionsModule,
     NbSearchModule,
     NbSidebarModule,
     NbCheckboxModule,
+    NbMenuModule,
     NbPopoverModule,
     NbContextMenuModule,
     NbCalendarModule,
     NbButtonModule,
-    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     NbSpinnerModule,
     NbInputModule, // required animations module
     ToastrModule.forRoot(), AppRoutingModule, // ToastrModule added
+    RouterModule.forRoot(appRoutes),
+    NbMenuModule.forRoot(),
   ],
   providers: [AwsCognitoService, NbSidebarService],
   bootstrap: [AppComponent]

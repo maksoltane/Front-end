@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
 import {AwsCognitoService} from './services/aws-cognito.service';
 
 
@@ -31,5 +29,8 @@ constructor(
 
 public testUser() {
   this.awsCognitoService.getUserConnected();
+}
+public seDeconnecter() {
+  this.awsCognitoService.signOut();
 }
 }
