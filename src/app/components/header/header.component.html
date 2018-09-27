@@ -1,1 +1,20 @@
-<a href="#" (click)="toggle()"><i class="fa fa-bars"></i></a>
+<!-- <a href="#" (click)="toggle()"><i class="fa fa-bars" style="font-size: 35px;"></i></a>
+<nb-badge text="99+" status="danger" position="top left"></nb-badge>
+<nb-user size="large" name="Jonh Doe" title="Engineer"></nb-user> -->
+        <div class="row">
+                <div class="col-4"> <a href="#" (click)="toggle()"><i class="fa fa-bars" style="font-size: 35px;"></i></a></div>
+                <div class="col-4">
+                    </div>
+                <div class="col-4" *ngIf="isConnected">
+                    <nb-actions size="small" style="float: right;">
+                            <nb-action> </nb-action>
+                        <nb-action icon="far fa-envelope" [badgeText]="user?.message.length" badgePosition="top right" badgeStatus="danger" [nbContextMenu]="user.message" nbContextMenuPlacement="bottom" nbContextMenuAdjustment="counterclockwise">
+                        </nb-action>
+                        <nb-action icon="far fa-bell" [badgeText]="user?.notification.length" badgePosition="top right" badgeStatus="danger" [nbContextMenu]="user.notification" nbContextMenuPlacement="bottom">
+                        </nb-action>
+                        <nb-action >
+                            <nb-user size="small" [nbContextMenu]="userHeaderMenu" [name]="user?.name" [title]="user?.title" [picture]="user?.picture" nbContextMenuTag="user-header-context-menu"></nb-user>
+                        </nb-action>
+                    </nb-actions>
+                </div>
+            </div>

@@ -12,8 +12,7 @@ import {AwsCognitoService} from './services/aws-cognito.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  //
-  liveApi: any;
+  isConnected: boolean;
 constructor(
   private toastr: ToastrService,
   private http: HttpClient,
@@ -26,11 +25,4 @@ constructor(
 //   this.http.get('http://apilayer.net/api/live?access_key=c1cac5752dad6ece0a1944c9d9f06a74&currencies=EUR&source=USD&format=1').pipe(
 //   )
 // }
-
-public testUser() {
-  this.awsCognitoService.getUserConnected();
-}
-public seDeconnecter() {
-  this.awsCognitoService.signOut();
-}
 }

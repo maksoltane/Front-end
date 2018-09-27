@@ -5,6 +5,7 @@ import { InscriptionComponent } from '../components/inscription/inscription.comp
 import { LoginComponent } from '../components/connexion/connexion.component';
 import {DashboardComponent} from '../components/dashbord/dashboard.component';
 import { SignoutComponent } from '../components/signout/signout.component';
+import {PageNotFoundComponent} from '../components/page-not-found-component/page-not-found.component';
 
 const routes: Routes = [
   // page reinitialiser mot de passe
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'signin', component: LoginComponent },
   { path: 'signout', component: SignoutComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: '**', component: PageNotFoundComponent},
  // { path: '', component: LoginComponent, resolve: {test: getlist()} },
 
 

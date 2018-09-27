@@ -38,7 +38,10 @@ import {
   NbSpinnerModule,
   NbInputModule,
   NbButtonModule,
+  NbBadgeModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
+import { PageNotFoundComponent } from './components/page-not-found-component/page-not-found.component';
 
 
 const appRoutes: Routes = [
@@ -57,34 +60,37 @@ const appRoutes: Routes = [
     SignoutComponent,
     HeaderComponent,
     SidebarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    NbThemeModule.forRoot({ name: 'default' }),
-    RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
-    NbLayoutModule,
-    NbAlertModule,
     NbCardModule,
+    NbLayoutModule,
     NbTabsetModule,
     NbRouteTabsetModule,
+    NbMenuModule,
     NbUserModule,
     NbActionsModule,
     NbSearchModule,
     NbSidebarModule,
     NbCheckboxModule,
-    NbMenuModule,
     NbPopoverModule,
     NbContextMenuModule,
+    NbProgressBarModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    NbAlertModule,
     NbCalendarModule,
     NbButtonModule,
     BrowserAnimationsModule,
     NbSpinnerModule,
+    NbBadgeModule,
     NbInputModule, // required animations module
     ToastrModule.forRoot(), AppRoutingModule, // ToastrModule added
     RouterModule.forRoot(appRoutes),
     NbMenuModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
+
   ],
   providers: [AwsCognitoService, NbSidebarService],
   bootstrap: [AppComponent]

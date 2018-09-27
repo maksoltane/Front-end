@@ -1,40 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'ns-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-    providers: [],
+  providers: [],
 
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnChanges {
+  menu: any[] = [];
+  @Input() isConnected: boolean;
 
-  private items = [
+  private menuIsConnected = [
     {
       title: 'Dashboard',
-      link: [],
+      link: ['dashboard'],
     },
     {
       title: 'Equipements',
-      link: [],
+      link: ['equipment'],
     },
     {
       title: 'Mon profil',
-      link: [],
+      link: ['profile'],
     },
     {
       title: 'Se connecter',
-      link: [],
+      link: ['signin'],
     },
     {
       title: 'Se déconnecter',
-      link: [],
+      link: ['signout'],
     },
     {
       title: `M'inscire`,
       link: [],
     },
   ];
+
+  private menuIsNotConnected = [
+    {
+      title: 'Se connecter',
+      link: ['signin'],
+    },
+    {
+      title: `S'inscire`,
+      link: ['signup'],
+    },
+  ];
+
+  /**
+   * checkConnected
+   */
+  public checkConnected() {
+    if (this.isConnected) {
+      this.menu = this.menuIsConnected;
+    } else {
+      this.menu = this.menuIsNotConnected;
+    }
+  }
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.checkConnected();
+  }
 
 }

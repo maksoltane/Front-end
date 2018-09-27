@@ -1,17 +1,20 @@
 
 <nb-layout>
+  
   <nb-layout-header fixed>
-      <ns-header></ns-header>
+    <div style="width: 100%;">
+        <ns-header [isConnected]= "isConnected"></ns-header>
+      </div>
+      
   </nb-layout-header>
 
   <nb-sidebar>
-    <ns-sidebar></ns-sidebar>
+    <ns-sidebar [isConnected]= "isConnected"></ns-sidebar>
   </nb-sidebar>
 
   <nb-layout-column>
-    <button (click)="testUser()"> test </button>
-    <button (click)="seDeconnecter()"> logout</button>
-      <router-outlet></router-outlet>
+      <router-outlet ></router-outlet>
   </nb-layout-column>
+
 </nb-layout>
 

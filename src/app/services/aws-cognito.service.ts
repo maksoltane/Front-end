@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth } from 'aws-amplify';
 
-
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -13,12 +10,8 @@ export class AwsCognitoService {
     //
   }
 
-  public getUserConnected() {
-    this.isAuthenticated();
-  }
-
   /**
-   * methode qui permet de verifier si le uer est connecté
+   * methode qui permet de verifier si le user est connecté
    *
    * @memberOf AwsCognitoService
    */
@@ -37,16 +30,7 @@ export class AwsCognitoService {
       });
   }
 
-  /**
-   *  methode qui permet de deconnecter le user de l'équipement actuel.
-   *
-   * @memberOf AwsCognitoService
-   */
-  public signOut() {
-    Auth.signOut()
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
-  }
+
 
   /**
    * methode qui permet de deconnecter le user de tout les équipements.

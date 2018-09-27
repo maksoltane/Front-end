@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user.models';
 import { Auth } from 'aws-amplify';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'ns-connexion',
@@ -12,7 +13,10 @@ export class LoginComponent {
   errorMessage: string = null;
   successMessage: string = null;
   validationConnexion = false;
-  constructor() { }
+
+  constructor(private location: Location) {
+    //
+  }
   onSubmitLogin() {
     this.errorMessage = null;
     this.successMessage = null;
@@ -21,6 +25,7 @@ export class LoginComponent {
       .then(user => {
         console.log(user);
         this.validationConnexion = true;
+        this.location.go('/dashboard');
       })
       .catch(err => {
         console.log(err);

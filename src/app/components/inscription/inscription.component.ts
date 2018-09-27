@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user.models';
 import Amplify, { Auth } from 'aws-amplify';
-import "../../../environments/aws-config";
 
 class UserAtho extends User {
   confirmation: string;
@@ -31,18 +30,14 @@ export class InscriptionComponent {
       username: this.userData.email,
       password: this.userData.password,
       attributes: {
-        email: this.userData.email,          // optional
-        // optional - E.164 number convention
-        // other custom attributes 
+        email: this.userData.email,
       },
-      validationData: []  //optional
+      validationData: [],
     })
       .then(data => {
-        console.log(data);
         this.validationInscription = true;
       })
       .catch(err => {
-        console.log(err);
         this.errorMessage = err.message;
       });
   }
@@ -53,11 +48,11 @@ export class InscriptionComponent {
       // Optional. Force user confirmation irrespective of existing alias. By default set to True.
       forceAliasCreation: true
     }).then(data => {
-      console.log(data)
-      this.confirmationInscription = true
+      console.log(data);
+      this.confirmationInscription = true;
     })
       .catch(err => {
-        console.log(err)
+        console.log(err);
       });
   }
 
